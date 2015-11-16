@@ -1,0 +1,57 @@
+<div ng-include src="'partials/menuCliente.html'"></div>
+<div class="container-fluid">
+  <!-- Menssagem site index -->
+  <div class="jumbotron">
+    <h1>Atomic Doge</h1>
+    <p>O primeiro site de vendas de doges de todo o mundo, para pessoas felizes que gostariam de ser ainda mais felizes adquirindo um de nossos produtos!</p>
+    <p>Compre Doges e descubra o jeito doge de se viver e ser feliz</p>
+    <p>
+      <a class="btn btn-lg btn-primary" href="#" role="button">Cadastre-se já »</a>
+    </p>
+  </div>
+
+  <div ng-repeat='produto in produtos | filter: filtro' class="col-md-3 produto wow fadeInRight" data-wow-delay=".2s">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title text-center">{{produto.nome}}</h3>
+      </div>
+      <div class="panel-body">
+        <figure>
+          <a href="#">
+            <img src="{{produto.imagemURL}}" class="img-circle img-responsive center-block imagem-produto imagem-produto-border-inset" alt="Doge Wow"/>
+          </a>
+          <div>
+            <p>{{produto.descricao}}</p>
+          </div>
+        </figure>
+        <!-- Tabela -->
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>
+                  <span class="glyphicon glyphicon-thumbs-up like btn-lg"></span>
+                  <span class="badge">0</span>
+              <td>
+              <td>
+                  <span class="glyphicon glyphicon-thumbs-down deslike btn-lg"></span>
+                  <span class="badge">0</span>
+              <td>
+            </tr>
+            <tr>
+              <td><td>
+              <td><td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="col-md-12 text-center">
+          <div class="btn-group">
+            <a href="#" class="btn btn-default">R$ {{produto.valor}}</a>
+            <a href="#" class="btn btn-success">Comprar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div ng-include src="'partials/rodape.html'"></div>

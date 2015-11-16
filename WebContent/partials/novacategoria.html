@@ -1,0 +1,63 @@
+<div ng-include src="'partials/menuAdmin.html'"></div>
+<div class="container-fluid">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <div class="alert alert-warning" role="alert" ng-show="mensagem.texto">
+      {{mensagem.texto}}
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Nova Categoria</h3>
+      </div>
+      <div class="panel-body">
+          <form ng-submit="salva()">
+            <div class="form-group">
+              <label for="nome">Nome: </label>
+              <input ng-model="categoria.nome" type="text" class="form-control" id="nome" placeholder="Nome" required="true">
+            </div>
+            <div>
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%">Salvar</button>
+            </div>
+          </form>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Categorias</div>
+      <div class="panel-body">
+        <div class="input-group">
+          <div class="input-group-btn">
+            <button type="submit" class="btn btn-default" >
+              <span class="glyphicon glyphicon-search cor-icones" aria-hidden="true"></span> <span class="cor-icones">Buscar</span>
+            </button>
+          </div>
+          <input ng-model="filtro" type="text" class="form-control" placeholder="Digite a sua busca" />
+        </div>
+      </div>
+      <table class="table table-hover">
+        <thead>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>#</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="c in categorias | filter: filtro">
+            <td>
+              {{c.id}}
+            </td>
+            <td>
+              {{c.nome}}
+            </td>
+            <td>
+              <button class="btn btn-warning" ng-click="remove(c)">Remover</button>
+            </td>
+          </tr>
+        </tbody>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+
+<div ng-include src="'partials/rodape.html'"></div>

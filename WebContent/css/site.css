@@ -1,0 +1,107 @@
+#doge-img{
+  width: 100px;
+  height: 100px;
+  box-shadow: 0px 0px 0px 2px #6F6161;
+}
+#logo{
+  font-size: 1.5em;
+}
+.eletron-logo{
+  width: 10px;
+  height: 10px;
+  background-color: #EB4444;
+  border-radius: 50%;
+  transform: translateY(-60px) translateX(-6px);
+}
+.navbar-default .navbar-nav>li>a{
+  color: #CE7E7E;
+  font-weight: 900;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+  color: #D25B5B;
+}
+.container-fluid{
+  margin-top: 130px;
+}
+.panel-primary{
+  border-color: #C95656;
+}
+.panel-primary>.panel-heading{
+  background-color: #D25B5B;
+  border-color: #C95656;
+}
+.panel-title{
+  font-size: 1.5em;
+}
+.btn-primary{
+  background-color: #D25B5B;
+  border-color: #C95656;
+}
+.btn-primary:hover{
+  background-color: #C95656;
+  border-color: #BF4E4E;
+}
+.imagem-produto{
+  -webkit-box-shadow: 0px 0px 31px 5px rgba(210,91,91,1);
+  -moz-box-shadow: 0px 0px 31px 5px rgba(210,91,91,1);
+  box-shadow: 0px 0px 31px 5px rgba(210,91,91,1);
+}
+.like{
+  color: #4cae4c;
+}
+.deslike{
+  color: #d9534f;
+}
+.titulo-row{
+  font-size: 3em;
+  font-weight: 900;
+  padding-bottom: 1em;
+}
+.produto .panel-heading{
+  background-color: #CE7E7E;
+}
+.produto p{
+  padding-top: 2em;
+}
+.footer{
+  padding-top: 2em;
+  border-top: 2px solid #C95656;
+  margin-top: 2em;
+  background-color: #D25B5B;
+}
+footer .panel{
+  background-color: #D25B5B;
+}
+footer .table>tbody>tr>td, footer .table>tbody>tr>th, footer .table>tfoot>tr>td, footer .table>tfoot>tr>th, footer .table>thead>tr>td, footer .table>thead>tr>th{
+  border: none;
+}
+footer a{
+  margin-left: 8em;
+  font-weight: 600;
+  color: white;
+}
+footer a:hover{
+  color: white;
+}
+footer address{
+  text-align: center;
+  margin-top: 1em;
+  color: white;
+}
+.area-restrita{
+  padding: 0.8em;
+}
+@media screen and (max-width: 992px) {
+  footer{
+    text-align: center;
+  }
+  footer td {
+    text-align: center;
+  }
+  footer a{
+    margin: 0px;
+  }
+  footer address{
+    padding: 0px;
+  }
+}

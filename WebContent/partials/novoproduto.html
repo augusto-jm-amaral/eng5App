@@ -1,0 +1,48 @@
+<div ng-include src="'partials/menuAdmin.html'"></div>
+<div class="container-fluid">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <div class="alert alert-warning" role="alert" ng-show="mensagem.texto">
+      {{mensagem.texto}}
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Novo Produto</h3>
+      </div>
+      <div class="panel-body">
+          <form ng-submit="salva()">
+            <div class="form-group">
+              <label for="nome">Nome: </label>
+              <input ng-model="produto.nome" type="text" class="form-control" id="nome" placeholder="Nome" required="true">
+            </div>
+            <div class="form-group">
+              <label for="descricao">Descrição</label>
+              <textarea ng-model="produto.descricao" type="text" class="form-control" id="descricao" placeholder="Descrição" required="true"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="categoria">Categoria</label>
+              <select ng-model="produto.categoria" ng-options="categoria as categoria.nome for categoria in categorias" class="form-control" id="categoria" required="true"></select>
+            </div>
+            <div class="form-group">
+              <label for="valor">Valor</label>
+              <input ng-model="produto.valor" type="text" class="form-control" id="valor" placeholder="Valor" required="true">
+            </div>
+            <div class="form-group">
+              <label for="quantidade">Quantidade</label>
+              <input ng-model="produto.quantidade" type="text" class="form-control" id="quantidade" placeholder="Quantidade" required="true">
+            </div>
+            <div class="form-group">
+              <label for="imagemUrl">URL da Imagem</label>
+              <input ng-model="produto.imagemURL" type="url" class="form-control" id="imagemUrl" placeholder="URL da Imagem" required="true">
+            </div>
+            <div>
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%">Salvar</button>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+
+<div ng-include src="'partials/rodape.html'"></div>
