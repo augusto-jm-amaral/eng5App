@@ -4,6 +4,7 @@ angular.module('eng5App').controller('MainClienteController',
     $scope.filtro = "";
     $scope.produtos = [];
     $scope.categorias = [];
+    $scope.showMenu = true;
 
     function carregarProdutos() {
       Produto.query(function (produtos) {

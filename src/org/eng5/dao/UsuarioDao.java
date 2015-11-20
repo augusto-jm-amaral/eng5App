@@ -15,15 +15,42 @@ public class UsuarioDao {
 		jpaUtil = new JPAUtil();
 		entityManager = jpaUtil.createEntityManager();
 	}
+	
+	public void AtualizarUsuario(Usuario usuario) {
+		Usuario usuarioUpdate = entityManager.find(Usuario.class, usuario);
+		abrirTransacao();
+		usuarioUpdate.setAdmin(usuario.isAdmin());
+		usuarioUpdate.setCpf(usuario.getCpf());
+		usuarioUpdate.setEndereco(usuario.getEndereco());
+		usuarioUpdate.setNome(usuario.getNome());
+		usuarioUpdate.setPassword(usuario.getPassword());
+		usuarioUpdate.setUsername(usuario.getUsername());
+		commitar();
+	}
 
 	public Usuario buscarUsuarioPorUserName(String userName) {
-		Query query = entityManager.createQuery(
-				"SELECT u FROM Usuario u WHERE u.username=" + userName,
-				Usuario.class);
 
-		Usuario singleResult = (Usuario) query.getSingleResult();
+		System.out.println(userName);
 
-		return singleResult;
+		Usuario usuario = null;
+
+		Query query = entityManager
+				.createQuery("SELECT u FROM Usuario u WHERE u.username=:user",
+						Usuario.class).setParameter("user", userName);
+		try {
+			usuario = (Usuario) query.getSingleResult();
+		} catch (Exception e) {
+			usuario = null;
+			System.out.println("UsuarioDao:::Usuario Não encontrado");
+		}
+
+		return usuario;
+	}
+
+	public void inserirUsuario(Usuario usuario) {
+		abrirTransacao();
+		entityManager.merge(usuario);
+		commitar();
 	}
 
 	private void commitar() {

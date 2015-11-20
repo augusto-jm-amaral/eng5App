@@ -4,3 +4,17 @@
 .dropdown-menu a{
   text-align: right;
 }
+#mTab-content p:first-child {
+  padding-top: 1em;
+}
+#like-container{
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+#comprar-container{
+  margin-bottom: 2em;
+}
+#imagem{
+  margin: auto;
+  margin-top: 5em;
+}

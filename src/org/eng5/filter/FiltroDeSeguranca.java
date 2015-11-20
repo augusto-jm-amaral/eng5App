@@ -37,9 +37,9 @@ public class FiltroDeSeguranca implements Filter {
 		Usuario usuario = (Usuario) ((HttpServletRequest) httpReq).getSession()
 				.getAttribute(UsuarioController.USUARIO_LOGADO);
 
-		if (method.equals("GET")) {
+		if (method.equals("GET") && !requestURI.contains("partialsAdmin")) {
 			filterChain.doFilter(req, resp);
-		} else if (method.equals("POST")) {
+		} else {
 			if (requestURI.contains("carrinho") || requestURI.contains("login")) {
 				filterChain.doFilter(req, resp);
 			} else {
@@ -54,14 +54,12 @@ public class FiltroDeSeguranca implements Filter {
 				}
 
 			}
-		} else {
-			httpResp.setStatus(401);
 		}
 	}
-
+	
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
-
+		
 	}
 
 }

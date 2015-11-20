@@ -1,0 +1,75 @@
+<div ng-include src="'partials/menuCliente.html'"></div>
+
+  <div class="container-fluid">
+
+    <div class="col-md-1"></div>
+    <div class="row thumbnail col-md-10">
+
+      <!-- Imagem produto -->
+      <div class="col-md-5">
+
+          <img id="imagem" src="{{produto.imagemURL}}" class="img-circle img-responsive imagem-produto imagem-produto-border-inset">
+
+      </div>
+
+      <!-- Descrição do produto -->
+      <div class="col-md-7">
+        <div class="row">
+          <div class="col-md-12 text-center"><h1>{{produto.nome}}</h1></div>
+          <!-- Like / deslike -->
+          <div id="like-container"class="col-md-12">
+            <div class="col-xs-6 text-right">
+              <a href="#">
+                <span class="glyphicon glyphicon-thumbs-up like btn-lg"></span>
+                <span class="badge">0</span>
+              </a>
+            </div>
+            <div class="col-xs-6 text-left">
+              <a href="#">
+                <span class="glyphicon glyphicon-thumbs-down deslike btn-lg"></span>
+                <span class="badge">0</span>
+              </a>
+            </div>
+          <!-- Fim like /deslike -->
+          </div>
+
+          <div id="comprar-container" class="col-md-12 text-center">
+            <div class="btn-group">
+              <a href="" class="btn btn-default btn-lg">R$ {{produto.valor}}</a>
+              <a href="" class="btn btn-success btn-lg" ng-click="comprar();">Comprar</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="text-left">
+            <!-- Tabs -->
+            <ul class="nav nav-tabs">
+              <li class="nav active">
+                <a data-toggle="tab">Descrição</a>
+              </li>
+            </ul>
+            <!--Tabs Content-->
+            <div id="mTab-content" class="tab-content">
+              <div id="descricao" class="tab-pane fade in active">
+                <p style="margin-top: 2em">
+									<b>Categoria:</b> {{produto.categoria.nome}}
+								</p>
+                <p>
+									{{produto.descricao}}
+								</p>
+
+              </div>
+            </div>
+          </div>
+
+        <!-- fim row descricao -->
+        </div>
+      <!-- Fim dados produto -->
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+
+<div ng-include src="'partials/rodape.html'"></div>

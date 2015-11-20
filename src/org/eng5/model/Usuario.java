@@ -1,12 +1,9 @@
 package org.eng5.model;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Usuario {
@@ -19,8 +16,7 @@ public class Usuario {
 	private String password;
 	private boolean isAdmin;
 	private String cpf;
-	@OneToMany
-	private List<Produto> carrinho;
+	private String endereco;
 
 	public String getNome() {
 		return nome;
@@ -62,12 +58,20 @@ public class Usuario {
 		this.cpf = cpf;
 	}
 
-	public List<Produto> getCarrinho() {
-		return carrinho;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setCarrinho(List<Produto> carrinho) {
-		this.carrinho = carrinho;
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
 
 }

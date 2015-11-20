@@ -27,9 +27,13 @@
       </ul>
 
       <!-- Botao Login e Carrinho -->
-      <ul class="nav navbar-nav navbar-right">
+      <ul ng-controller="UsuarioController" class="nav navbar-nav navbar-right">
+
+        <li ng-show="mensagemRecep">
+          <a>{{mensagemRecep}}</a>
+        </li>
         <li>
-          <a >Login</a>
+          <a ng-href="{{menuLogin.url}}">{{menuLogin.text}}</a>
         </li>
         <li>
           <a>
@@ -40,7 +44,7 @@
       </ul>
 
       <!-- Form Busca Header-->
-      <form class="navbar-form navbar-right">
+      <form class="navbar-form navbar-right" ng-show="$parent.showMenu">
         <div class="input-group">
           <div class="input-group-btn">
             <button type="submit" class="btn btn-default" >
@@ -53,9 +57,9 @@
 
       <!--Menu header-->
       <ul class="nav navbar-nav navbar-right">
-        <li><a class="text-center">Quem somos</a></li>
+        <li><a ng-href="/eng5/#/quemSomos" class="text-center">Quem somos</a></li>
         <!-- Produtos -->
-        <li class="dropdown">
+        <li class="dropdown" ng-show="$parent.showMenu">
           <a class="dropdown-toggle text-center" data-toggle="dropdown">
             Produtos
             <span class="caret"></span>

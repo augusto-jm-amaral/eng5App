@@ -1,0 +1,31 @@
+<div ng-include src="'partials/menuCliente.html'"></div>
+<div class="container-fluid">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <div class="alert alert-warning" role="alert" ng-show="mensagem.texto">
+      {{mensagem.texto}}
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Login</h3>
+      </div>
+      <div class="panel-body">
+          <form ng-submit="login()">
+            <div class="form-group">
+              <label for="nome">Login: </label>
+              <input ng-model="usuario.nome" type="text" class="form-control" id="nome" placeholder="exemplo@email.com" required="true">
+            </div>
+            <div class="form-group">
+              <label for="nome">Senha: </label>
+              <input ng-model="usuario.senha" type="password" class="form-control" id="senha" placeholder="***" required="true">
+            </div>
+            <div>
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%">Login</button>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+<div ng-include src="'partials/rodape.html'"></div>
